@@ -1,0 +1,42 @@
+<?php get_header(); ?>
+
+			<div id="content">
+
+				
+
+						<main id="main" class="d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+
+                            <section id="page-banner" data-parallax="scroll"  data-position="top center" data-image-src="<?php the_post_thumbnail_url('full'); ?>">
+                            
+                            </section>
+									
+
+								<section class="page-top cf normal" itemprop="articleBody" style="background-color: <?php the_field('top_color');?>" id="contacts">
+                                    <div id="inner-content" class="wrap cf">
+                                    <div class="d-all">
+                                        <h1 class="page-title" style="background-color: <?php the_field('title_color');?>"><?php the_title(); ?></h1>    
+                                    </div>
+                                    <div id="page-content" class="cf">
+                                        <div class="d-1of2"><?php the_field('first_column'); ?></div>  
+                                        <div class="d-1of2"><?php the_field('second_column'); ?></div>  
+
+                                    </div>
+                                    
+                                    </div>
+								</section>
+                            
+							<?php endwhile; endif; ?>
+                            
+
+						</main>
+
+
+
+
+			</div>
+
+
+<?php get_footer(); ?>

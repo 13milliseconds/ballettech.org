@@ -1,0 +1,76 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$ballet-pink:       #B3006D;
+$ballet-yellow:     #E3E300;
+$ballet-grey:       #DBEAE5;
+$ballet-orange:     #FF9E00;
+$ballet-green:      #93D500;
+$ballet-red:        #C70046;
+$ballet-teal:       #63DCAD;
+
+$black:             #000;
+$white:             #fff;
+$white-trans:       rgba(256, 256, 256, .8);
+
+$gray:              #DBEAE5;
+$light-gray:        $gray;
+$text-color:        $black;
+$meta-gray:         #9fa6b4;
+
+$tan:               #eceee5;
+
+$green:             #7dd667;
+
+$bones-pink:        #f01d4f;
+$blue:              #2980b9;
+$blue-menu:         #6CC2FF;
+$darkblue:          #253c8a;
+
+$yellowgreen:       $ballet-yellow;
+$greenblue:         $ballet-grey;
+
+$link-color:        $blue;
+$link-hover:        darken($link-color, 9%);
+
+$border-color:      #ccc;
+$disabled-gray:     #cfcfcf;
+
+
+$yellow:            $ballet-yellow;
+$darkbrown:         #282425;
+$red:               $ballet-red;
+$red-hover:         darken($red, 20%);
+
+$darkblue:          #253B8D;
+$darkblue-hover:    darken($darkblue, 20%);
+
+
+
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/

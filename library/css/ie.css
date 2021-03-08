@@ -1,0 +1,1311 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/******************************************************************
+IMPORTS & DEPENDENCIES
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+******************************************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Typography
+
+Need to import a font or set of icons for your site? Drop them in
+here or just use this to establish your typographical grid. Or not.
+Do whatever you want to...GOSH!
+
+Helpful Articles:
+http://trentwalton.com/2012/06/19/fluid-type/
+http://ia.net/blog/responsive-typography-the-basics/
+http://alistapart.com/column/responsive-typography-is-a-physical-discipline
+
+******************************************************************/
+/*********************
+FONT FACE (IN YOUR FACE)
+*********************/
+/*  To embed your own fonts, use this syntax
+  and place your fonts inside the
+  library/fonts folder. For more information
+  on embedding fonts, go to:
+  http://www.fontsquirrel.com/
+  Be sure to remove the comment brackets.
+*/
+/*  @font-face {
+      font-family: 'Font Name';
+      src: url('library/fonts/font-name.eot');
+      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+*/
+@import url("//hello.myfonts.net/count/38b401");
+@font-face {
+  font-family: 'TradeGothic';
+  font-weight: bold;
+  font-style: normal;
+  src: url("../myfonts/webfonts/38B401_0_0.eot");
+  src: url("../myfonts/webfonts/38B401_0_0.eot?#iefix") format("embedded-opentype"), url("../myfonts/webfonts/38B401_0_0.woff2") format("woff2"), url("../myfonts/webfonts/38B401_0_0.woff") format("woff"), url("../myfonts/webfonts/38B401_0_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'TradeGothic';
+  font-style: italic, oblique;
+  src: url("../myfonts/webfonts/38B401_1_0.eot");
+  src: url("../myfonts/webfonts/38B401_1_0.eot?#iefix") format("embedded-opentype"), url("../myfonts/webfonts/38B401_1_0.woff2") format("woff2"), url("../myfonts/webfonts/38B401_1_0.woff") format("woff"), url("../myfonts/webfonts/38B401_1_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'TradeGothic';
+  font-style: italic;
+  font-weight: bold;
+  src: url("../myfonts/webfonts/38B401_2_0.eot");
+  src: url("../myfonts/webfonts/38B401_2_0.eot?#iefix") format("embedded-opentype"), url("../myfonts/webfonts/38B401_2_0.woff2") format("woff2"), url("../myfonts/webfonts/38B401_2_0.woff") format("woff"), url("../myfonts/webfonts/38B401_2_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'TradeGothic';
+  src: url("../myfonts/webfonts/38B401_3_0.eot");
+  src: url("../myfonts/webfonts/38B401_3_0.eot?#iefix") format("embedded-opentype"), url("../myfonts/webfonts/38B401_3_0.woff2") format("woff2"), url("../myfonts/webfonts/38B401_3_0.woff") format("woff"), url("../myfonts/webfonts/38B401_3_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'TradeGothicLTPro-BdCn20';
+  src: url("../myfonts/webfonts/38B401_4_0.eot");
+  src: url("../myfonts/webfonts/38B401_4_0.eot?#iefix") format("embedded-opentype"), url("../myfonts/webfonts/38B401_4_0.woff2") format("woff2"), url("../myfonts/webfonts/38B401_4_0.woff") format("woff"), url("../myfonts/webfonts/38B401_4_0.ttf") format("truetype");
+}
+/*
+The following is based of Typebase:
+https://github.com/devinhunt/typebase.css
+I've edited it a bit, but it's a nice starting point.
+*/
+/*
+some nice typographical defaults
+more here: http://www.newnet-soft.com/blog/csstypography
+*/
+/* line 96, ../scss/partials/_typography.scss */
+p {
+  -ms-word-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: manual;
+  -moz-hyphens: manual;
+  hyphens: manual;
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+  -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig";
+}
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: IE Grid Styles
+
+Since the example grid is based on media queries, so rather than
+setup some js library that would make IE8 and below understand
+media queries, let's just add some styles that serves a fixed grid.
+
+Again, if you want to roll your own, just remove this junk and put
+whatever you use in here.
+
+******************************************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection.
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.scss styles.
+
+******************************************************************/
+/*
+IMPORTANT NOTE ABOUT SASS 3.3 & UP
+You can't use @extend within media queries
+anymore, so just be aware that if you drop
+them in here, they won't work.
+*/
+/* line 25, ../scss/breakpoints/_481up.scss */
+.wrap {
+  width: 90%;
+}
+
+/* line 32, ../scss/breakpoints/_481up.scss */
+.single .subpage .page-top #top-sublinks {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+/* .menu is clearfixed inside mixins.scss */
+/* line 45, ../scss/breakpoints/_481up.scss */
+.menu {
+  /* end .menu ul */
+}
+/* line 46, ../scss/breakpoints/_481up.scss */
+.menu ul {
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */
+}
+/* line 47, ../scss/breakpoints/_481up.scss */
+.menu ul li {
+  /*
+  plan your menus and drop-downs wisely.
+  */
+}
+/* line 48, ../scss/breakpoints/_481up.scss */
+.menu ul li a {
+  /*
+  you can use hover styles here even though this size
+  has the possibility of being a mobile device.
+  */
+}
+
+/* end .menu */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* entry content */
+/* line 93, ../scss/breakpoints/_481up.scss */
+.entry-content {
+  /* at this larger size, we can start to align images */
+}
+/* line 97, ../scss/breakpoints/_481up.scss */
+.entry-content .alignleft, .entry-content img.alignleft {
+  margin-right: 1.5em;
+  display: inline;
+  float: left;
+}
+/* line 102, ../scss/breakpoints/_481up.scss */
+.entry-content .alignright, .entry-content img.alignright {
+  margin-left: 1.5em;
+  display: inline;
+  float: right;
+}
+/* line 107, ../scss/breakpoints/_481up.scss */
+.entry-content .aligncenter, .entry-content img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both;
+}
+
+/* end .entry-content */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+check your menus here. do they look good?
+do they need tweaking?
+*/
+/* end .footer-links */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+/* line 25, ../scss/breakpoints/_768up.scss */
+a {
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+/* line 29, ../scss/breakpoints/_768up.scss */
+h1 {
+  font-size: 3.5em;
+}
+
+/* line 32, ../scss/breakpoints/_768up.scss */
+h2 {
+  font-size: 2.75em;
+}
+
+/* line 36, ../scss/breakpoints/_768up.scss */
+main#main {
+  margin-bottom: -50px;
+  padding-top: 85px;
+}
+
+/* line 41, ../scss/breakpoints/_768up.scss */
+.home main#main {
+  margin-bottom: 0px;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+/* line 49, ../scss/breakpoints/_768up.scss */
+.wrap {
+  width: 80%;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+/* line 59, ../scss/breakpoints/_768up.scss */
+#logo {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+  margin: .5em 0;
+}
+/* line 62, ../scss/breakpoints/_768up.scss */
+#logo.h1 {
+  font-size: 2em;
+}
+/* line 65, ../scss/breakpoints/_768up.scss */
+#logo img, #logo div {
+  vertical-align: middle;
+}
+/* line 68, ../scss/breakpoints/_768up.scss */
+#logo img {
+  display: inline-block;
+  width: 60px;
+  margin: 0 10px;
+}
+/* line 73, ../scss/breakpoints/_768up.scss */
+#logo div {
+  display: none;
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+}
+/* line 77, ../scss/breakpoints/_768up.scss */
+#logo .logo-sub {
+  display: block;
+  font-size: .5em;
+  line-height: .5;
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+/* line 87, ../scss/breakpoints/_768up.scss */
+nav {
+  text-align: right;
+}
+
+/* line 93, ../scss/breakpoints/_768up.scss */
+#menu-main > li > a {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+/* line 97, ../scss/breakpoints/_768up.scss */
+#menu-main > li.menu-item:hover {
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+/* line 104, ../scss/breakpoints/_768up.scss */
+#menu-main > li.menu-item#menu-item-28:hover {
+  background-image: url("https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200.png");
+}
+/* line 107, ../scss/breakpoints/_768up.scss */
+#menu-main > li.menu-item#menu-item-53:hover {
+  background-image: url("https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200-bluegreen.png");
+}
+/* line 110, ../scss/breakpoints/_768up.scss */
+#menu-main > li.menu-item#menu-item-52:hover {
+  background-image: url("https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200-yellow.png");
+}
+/* line 113, ../scss/breakpoints/_768up.scss */
+#menu-main > li.menu-item#menu-item-51:hover {
+  background-image: url("https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200-pink.png");
+}
+/* line 116, ../scss/breakpoints/_768up.scss */
+#menu-main > li.menu-item#menu-item-682:hover {
+  background-image: url("https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200-orange.png");
+}
+/* line 119, ../scss/breakpoints/_768up.scss */
+#menu-main > li.menu-item#menu-item-49:hover {
+  background-image: url("https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200.png");
+}
+/* line 122, ../scss/breakpoints/_768up.scss */
+#menu-main > li.menu-item#menu-item-48:hover {
+  background-image: url("https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200-green.png");
+}
+
+/* line 127, ../scss/breakpoints/_768up.scss */
+.nav {
+  border: 0;
+  display: inline-block;
+  top: auto;
+  right: auto;
+  padding: 0 0 0 0;
+  height: auto;
+  width: auto;
+  background-color: transparent;
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */
+}
+/* line 138, ../scss/breakpoints/_768up.scss */
+.nav ul {
+  margin-top: 0;
+}
+/* line 141, ../scss/breakpoints/_768up.scss */
+.nav li {
+  float: left;
+  position: relative;
+  /*
+  plan your menus and drop-downs wisely.
+  */
+  /* showing sub-menus */
+}
+/* line 146, ../scss/breakpoints/_768up.scss */
+.nav li#menu-item-28 a, .nav li#menu-item-53 a, .nav li#menu-item-52 a, .nav li#menu-item-51 a, .nav li#menu-item-682 a, .nav li#menu-item-49 a, .nav li#menu-item-48 a {
+  color: #fff;
+}
+/* line 149, ../scss/breakpoints/_768up.scss */
+.nav li#menu-item-28 > a, .nav li#menu-item-53 > a, .nav li#menu-item-52 > a, .nav li#menu-item-51 > a, .nav li#menu-item-682 > a, .nav li#menu-item-49 > a, .nav li#menu-item-48 > a {
+  color: #000;
+}
+/* line 153, ../scss/breakpoints/_768up.scss */
+.nav li#menu-item-28 ul.sub-menu li:hover a, .nav li#menu-item-28 ul.sub-menu li:focus a, .nav li#menu-item-53 ul.sub-menu li:hover a, .nav li#menu-item-53 ul.sub-menu li:focus a, .nav li#menu-item-52 ul.sub-menu li:hover a, .nav li#menu-item-52 ul.sub-menu li:focus a, .nav li#menu-item-51 ul.sub-menu li:hover a, .nav li#menu-item-51 ul.sub-menu li:focus a, .nav li#menu-item-682 ul.sub-menu li:hover a, .nav li#menu-item-682 ul.sub-menu li:focus a, .nav li#menu-item-49 ul.sub-menu li:hover a, .nav li#menu-item-49 ul.sub-menu li:focus a, .nav li#menu-item-48 ul.sub-menu li:hover a, .nav li#menu-item-48 ul.sub-menu li:focus a {
+  color: #E3E300;
+}
+/* line 158, ../scss/breakpoints/_768up.scss */
+.nav li#menu-item-53 a {
+  line-height: auto;
+  padding-top: 0.75em;
+}
+/* line 163, ../scss/breakpoints/_768up.scss */
+.nav li#menu-item-348 a {
+  padding: 0.75em 1em;
+  padding-left: 0;
+}
+/* line 167, ../scss/breakpoints/_768up.scss */
+.nav li#menu-item-347 a {
+  padding: 0.75em 1em;
+  padding-right: 1em;
+  padding-left: 0;
+}
+/* line 173, ../scss/breakpoints/_768up.scss */
+.nav li#menu-item-53 a {
+  line-height: initial;
+}
+/* line 179, ../scss/breakpoints/_768up.scss */
+.nav li a {
+  border-bottom: 0;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.75em 1em;
+  font-size: 1em;
+  line-height: initial;
+  /*
+  you can use hover styles here even though this size
+  has the possibility of being a mobile device.
+  */
+}
+/* line 190, ../scss/breakpoints/_768up.scss */
+.nav li a:hover, .nav li a:focus {
+  color: #93D500;
+}
+/* line 201, ../scss/breakpoints/_768up.scss */
+.nav li ul.sub-menu,
+.nav li ul.children {
+  display: block;
+  top: auto;
+  background: #6CC2FF;
+  border-top: 10px white solid;
+  margin-top: 0px;
+  padding: 3px;
+  position: absolute;
+  visibility: hidden;
+  z-index: 8999;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  /* highlight sub-menu current page */
+}
+/* line 216, ../scss/breakpoints/_768up.scss */
+.nav li ul.sub-menu li,
+.nav li ul.children li {
+  float: none;
+  display: inline-block;
+  /*
+  if you need to go deeper, go nuts
+  just remember deeper menus suck
+  for usability. k, bai.
+  */
+}
+/* line 221, ../scss/breakpoints/_768up.scss */
+.nav li ul.sub-menu li a,
+.nav li ul.children li a {
+  padding-bottom: 5px;
+  padding-left: 10px;
+  border-right: 0;
+  display: block;
+  width: auto;
+  color: #fff;
+  font-size: 1em;
+}
+/* line 239, ../scss/breakpoints/_768up.scss */
+.nav li ul.sub-menu li:last-child a,
+.nav li ul.children li:last-child a {
+  border-bottom: 0;
+}
+/* line 249, ../scss/breakpoints/_768up.scss */
+.nav li ul.sub-menu li ul,
+.nav li ul.children li ul {
+  top: 0;
+  left: 100%;
+}
+/* line 264, ../scss/breakpoints/_768up.scss */
+.nav li:hover > ul {
+  top: auto;
+  visibility: visible;
+}
+
+/* end .nav */
+/* line 281, ../scss/breakpoints/_768up.scss */
+.header nav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+/* line 286, ../scss/breakpoints/_768up.scss */
+.header #logo.h1 {
+  font-size: 1.5em;
+  margin: 0 0;
+}
+/* line 290, ../scss/breakpoints/_768up.scss */
+.header li a {
+  padding: .75em;
+}
+/* line 293, ../scss/breakpoints/_768up.scss */
+.header #mobile-bars {
+  display: none;
+}
+
+/* line 298, ../scss/breakpoints/_768up.scss */
+main#main.error {
+  padding: 300px 0;
+}
+/* line 300, ../scss/breakpoints/_768up.scss */
+main#main.error img {
+  width: 50%;
+}
+
+/* line 306, ../scss/breakpoints/_768up.scss */
+#home-segments {
+  z-index: 1;
+  padding-top: 0;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  margin-bottom: 0px;
+  position: absolute;
+  top: 0;
+}
+/* line 313, ../scss/breakpoints/_768up.scss */
+#home-segments #eventscontent {
+  padding-top: 20px;
+}
+
+/* line 318, ../scss/breakpoints/_768up.scss */
+body.home {
+  background-color: transparent;
+}
+
+/* line 323, ../scss/breakpoints/_768up.scss */
+.home #firstSlide .clickButton {
+  display: block;
+  border: 5px solid #B3006D;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 7px 24px;
+  color: #B3006D;
+  font-size: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100px);
+  -moz-transform: translate(-50%, -100px);
+  -ms-transform: translate(-50%, -100px);
+  -o-transform: translate(-50%, -100px);
+  transform: translate(-50%, -100px);
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+/* line 338, ../scss/breakpoints/_768up.scss */
+.home #firstSlide .clickButton:hover {
+  -webkit-transform: translate(-50%, -100px) scale(1.1);
+  -moz-transform: translate(-50%, -100px) scale(1.1);
+  -ms-transform: translate(-50%, -100px) scale(1.1);
+  -o-transform: translate(-50%, -100px) scale(1.1);
+  transform: translate(-50%, -100px) scale(1.1);
+}
+/* line 341, ../scss/breakpoints/_768up.scss */
+.home #firstSlide .clickButton.hidden {
+  opacity: 0;
+}
+/* line 346, ../scss/breakpoints/_768up.scss */
+.home #home-intro {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translateY(-4em);
+  -moz-transform: translateY(-4em);
+  -ms-transform: translateY(-4em);
+  -o-transform: translateY(-4em);
+  transform: translateY(-4em);
+}
+/* line 351, ../scss/breakpoints/_768up.scss */
+.home #home-intro #wrap-intro {
+  position: relative;
+}
+/* line 355, ../scss/breakpoints/_768up.scss */
+.home #home-logo {
+  position: relative;
+  z-index: 1;
+}
+/* line 358, ../scss/breakpoints/_768up.scss */
+.home #home-logo a {
+  cursor: pointer;
+  width: 50%;
+  bottom: 5%;
+  top: auto;
+  z-index: 99;
+  -webkit-transition: right 0.5s, opacity 0.2s;
+  -moz-transition: right 0.5s, opacity 0.2s;
+  transition: right 0.5s, opacity 0.2s;
+}
+/* line 369, ../scss/breakpoints/_768up.scss */
+.home #second-home {
+  margin-bottom: -500px;
+}
+/* line 371, ../scss/breakpoints/_768up.scss */
+.home #second-home .background-color {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 300px;
+  left: 0px;
+  top: -20px;
+}
+/* line 380, ../scss/breakpoints/_768up.scss */
+.home #second-home .content {
+  z-index: 99;
+  top: 0;
+  position: absolute;
+  overflow: hidden;
+}
+/* line 385, ../scss/breakpoints/_768up.scss */
+.home #second-home .content .half {
+  padding: 30px;
+  position: relative;
+  background-color: transparent;
+}
+/* line 389, ../scss/breakpoints/_768up.scss */
+.home #second-home .content .half .text {
+  z-index: 5;
+  position: relative;
+}
+/* line 392, ../scss/breakpoints/_768up.scss */
+.home #second-home .content .half .text h2 {
+  margin-top: 0;
+}
+/* line 396, ../scss/breakpoints/_768up.scss */
+.home #second-home .content .half#home-events {
+  padding-left: 50px;
+}
+/* line 402, ../scss/breakpoints/_768up.scss */
+.home #home-intro {
+  background-color: transparent;
+  padding: 100px 20px 50px;
+}
+/* line 405, ../scss/breakpoints/_768up.scss */
+.home #home-intro #wrap-intro {
+  z-index: 5;
+  padding: 0px 20px;
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: bold;
+  left: 0;
+}
+/* line 413, ../scss/breakpoints/_768up.scss */
+.home #home-intro #intro-background {
+  display: block;
+  position: absolute;
+  width: 110%;
+  height: 150%;
+  top: 0;
+  left: -5%;
+  -webkit-transform: rotate(-2deg) translate(0, 50px);
+  -moz-transform: rotate(-2deg) translate(0, 50px);
+  -ms-transform: rotate(-2deg) translate(0, 50px);
+  -o-transform: rotate(-2deg) translate(0, 50px);
+  transform: rotate(-2deg) translate(0, 50px);
+}
+/* line 423, ../scss/breakpoints/_768up.scss */
+.home #home-footer {
+  display: block;
+}
+/* line 425, ../scss/breakpoints/_768up.scss */
+.home #home-footer .fp-tableCell {
+  width: 10%;
+}
+/* line 428, ../scss/breakpoints/_768up.scss */
+.home #home-footer footer {
+  padding: 50px 200px 50px;
+}
+/* line 432, ../scss/breakpoints/_768up.scss */
+.home .slotholder {
+  transform: translateY(0) !important;
+}
+
+/* line 438, ../scss/breakpoints/_768up.scss */
+#home-banner video.fullscreen-bg__video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  display: block;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+/* line 447, ../scss/breakpoints/_768up.scss */
+#home-banner video.fullscreen-bg__video.heightfirst {
+  width: auto;
+  height: 100%;
+}
+/* line 452, ../scss/breakpoints/_768up.scss */
+#home-banner #home-top-slider {
+  display: none;
+}
+
+/* line 457, ../scss/breakpoints/_768up.scss */
+.home #mute-btn {
+  display: block;
+  color: #B3006D;
+  top: 120px;
+  right: 20px;
+  position: absolute;
+  font-size: 2em;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+/* line 466, ../scss/breakpoints/_768up.scss */
+.home #mute-btn:hover {
+  opacity: .8;
+}
+
+/* line 472, ../scss/breakpoints/_768up.scss */
+#page-banner .featured_caption {
+  display: block;
+}
+
+/* line 477, ../scss/breakpoints/_768up.scss */
+section:nth-child(3) {
+  padding-top: 50px;
+}
+
+/* line 487, ../scss/breakpoints/_768up.scss */
+.banner {
+  padding-top: 100px;
+  -webkit-transform: translate(0px, -50px);
+  -moz-transform: translate(0px, -50px);
+  -ms-transform: translate(0px, -50px);
+  -o-transform: translate(0px, -50px);
+  transform: translate(0px, -50px);
+  margin-bottom: -50px;
+}
+/* line 491, ../scss/breakpoints/_768up.scss */
+.banner.quotes {
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  margin-bottom: -60px;
+}
+/* line 492, ../scss/breakpoints/_768up.scss */
+.banner.quotes .quote {
+  height: 8em;
+}
+/* line 494, ../scss/breakpoints/_768up.scss */
+.banner.quotes .quote p {
+  height: 5em;
+}
+/* line 500, ../scss/breakpoints/_768up.scss */
+.banner.quotes:last-of-type {
+  margin-bottom: 0px;
+}
+
+/* line 505, ../scss/breakpoints/_768up.scss */
+.segment {
+  position: relative;
+  padding-top: 150px;
+  -webkit-transform: translate(0px, -50px);
+  -moz-transform: translate(0px, -50px);
+  -ms-transform: translate(0px, -50px);
+  -o-transform: translate(0px, -50px);
+  transform: translate(0px, -50px);
+  margin-bottom: -100px;
+}
+/* line 511, ../scss/breakpoints/_768up.scss */
+.segment .background {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+/* line 517, ../scss/breakpoints/_768up.scss */
+.segment .background .background-image {
+  min-height: 500px;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 526, ../scss/breakpoints/_768up.scss */
+.segment .background .background-color {
+  z-index: 2;
+  height: 200%;
+  display: block;
+}
+/* line 533, ../scss/breakpoints/_768up.scss */
+.segment .content {
+  padding: 0 0 150px;
+}
+/* line 535, ../scss/breakpoints/_768up.scss */
+.segment .content > .half {
+  padding: 0 40px;
+  background-color: transparent !important;
+}
+/* line 539, ../scss/breakpoints/_768up.scss */
+.segment .content .d-4of7 {
+  display: block;
+}
+
+/* line 545, ../scss/breakpoints/_768up.scss */
+.col-1 {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+}
+
+/* line 548, ../scss/breakpoints/_768up.scss */
+.col-2 {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+
+/* line 551, ../scss/breakpoints/_768up.scss */
+.col-3 {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+
+/* line 554, ../scss/breakpoints/_768up.scss */
+.break {
+  break-after: always;
+  -moz-column-break-after: always;
+  -webkit-column-break-after: always;
+}
+
+/* line 560, ../scss/breakpoints/_768up.scss */
+.page .subpage ul {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 50px;
+  -moz-column-gap: 50px;
+  column-gap: 50px;
+}
+/* line 563, ../scss/breakpoints/_768up.scss */
+.page .subpage ul.col-1 {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+}
+/* line 566, ../scss/breakpoints/_768up.scss */
+.page .subpage ul.col-2 {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+/* line 569, ../scss/breakpoints/_768up.scss */
+.page .subpage ul.col-3 {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+/* line 574, ../scss/breakpoints/_768up.scss */
+.page .subpage .page-top {
+  padding: 100px 0;
+}
+/* line 577, ../scss/breakpoints/_768up.scss */
+.page .subpage .page-top #top-sublinks {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+/* line 584, ../scss/breakpoints/_768up.scss */
+.page .subpage .tab-title {
+  font-size: 3em;
+}
+/* line 587, ../scss/breakpoints/_768up.scss */
+.page .subpage section:nth-of-type(3) {
+  padding-top: 100px;
+}
+/* line 590, ../scss/breakpoints/_768up.scss */
+.page .subpage section.default {
+  padding-top: 0;
+}
+/* line 593, ../scss/breakpoints/_768up.scss */
+.page .subpage .banner {
+  margin-bottom: -150px;
+}
+/* line 596, ../scss/breakpoints/_768up.scss */
+.page .subpage .banner-image {
+  margin-bottom: 15px;
+}
+/* line 598, ../scss/breakpoints/_768up.scss */
+.page .subpage .banner-image img {
+  width: 100%;
+}
+
+/* line 604, ../scss/breakpoints/_768up.scss */
+.back {
+  right: 50px;
+  display: block;
+}
+
+/* line 609, ../scss/breakpoints/_768up.scss */
+.ballet-info {
+  padding: 0 50px 20px 0px;
+}
+
+/* line 612, ../scss/breakpoints/_768up.scss */
+.ballet-title {
+  padding-left: 4em;
+}
+
+/* line 615, ../scss/breakpoints/_768up.scss */
+.ballet-date {
+  padding-top: 20px;
+  height: 0;
+}
+/* line 618, ../scss/breakpoints/_768up.scss */
+.ballet-date:first-child {
+  padding-top: 0;
+}
+
+/* line 623, ../scss/breakpoints/_768up.scss */
+.ballet-kidsdance .arrow {
+  display: inline-block;
+  -webkit-transform: rotate(5deg) translateX(-20px);
+  -moz-transform: rotate(5deg) translateX(-20px);
+  -ms-transform: rotate(5deg) translateX(-20px);
+  -o-transform: rotate(5deg) translateX(-20px);
+  transform: rotate(5deg) translateX(-20px);
+  margin-top: -200px;
+}
+/* line 628, ../scss/breakpoints/_768up.scss */
+.ballet-kidsdance .kids-logo {
+  width: 100%;
+}
+
+/* line 633, ../scss/breakpoints/_768up.scss */
+.shaded {
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* line 638, ../scss/breakpoints/_768up.scss */
+.page #page-banner, .archive #page-banner, .single #page-banner {
+  height: auto;
+}
+/* line 642, ../scss/breakpoints/_768up.scss */
+.page .content, .archive .content, .single .content {
+  padding: 50px 0 150px;
+}
+/* line 647, ../scss/breakpoints/_768up.scss */
+.page .page-top h1, .archive .page-top h1, .single .page-top h1 {
+  left: -12.5%;
+  -webkit-transform: translateY(-150px);
+  -moz-transform: translateY(-150px);
+  -ms-transform: translateY(-150px);
+  -o-transform: translateY(-150px);
+  transform: translateY(-150px);
+  padding: 20px 50px 20px 50px;
+  font-size: 2.5em;
+}
+/* line 654, ../scss/breakpoints/_768up.scss */
+.page .page-top #description, .archive .page-top #description, .single .page-top #description {
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+/* line 659, ../scss/breakpoints/_768up.scss */
+.page .page-top #glance-background, .archive .page-top #glance-background, .single .page-top #glance-background {
+  -webkit-transform: rotate(4deg);
+  -moz-transform: rotate(4deg);
+  -ms-transform: rotate(4deg);
+  -o-transform: rotate(4deg);
+  transform: rotate(4deg);
+  top: -50%;
+  left: 0px;
+}
+/* line 664, ../scss/breakpoints/_768up.scss */
+.page .page-top #glance-content, .archive .page-top #glance-content, .single .page-top #glance-content {
+  position: relative;
+  padding: 50px 50px 50px 150px;
+}
+/* line 668, ../scss/breakpoints/_768up.scss */
+.page .page-top #glance, .archive .page-top #glance, .single .page-top #glance {
+  margin: 0;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+/* line 673, ../scss/breakpoints/_768up.scss */
+.page .page-top #page-content, .archive .page-top #page-content, .single .page-top #page-content {
+  padding: 200px 0;
+}
+/* line 677, ../scss/breakpoints/_768up.scss */
+.page .simple .page-top, .archive .simple .page-top, .single .simple .page-top {
+  padding-top: 50px;
+}
+/* line 679, ../scss/breakpoints/_768up.scss */
+.page .simple .page-top .d-all, .archive .simple .page-top .d-all, .single .simple .page-top .d-all {
+  height: auto;
+}
+/* line 682, ../scss/breakpoints/_768up.scss */
+.page .simple .page-top h1, .archive .simple .page-top h1, .single .simple .page-top h1 {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  margin-bottom: 50px;
+}
+/* line 686, ../scss/breakpoints/_768up.scss */
+.page .simple .page-top #page-content, .archive .simple .page-top #page-content, .single .simple .page-top #page-content {
+  padding: 0 0 100px;
+}
+/* line 691, ../scss/breakpoints/_768up.scss */
+.page.page-id-6 .page-top, .page.tribe-filter-live .page-top, .page.page-id-40 .page-top, .page.page-id-38 .page-top, .page.page-id-677 .page-top, .page.single-ballet .page-top, .archive.page-id-6 .page-top, .archive.tribe-filter-live .page-top, .archive.page-id-40 .page-top, .archive.page-id-38 .page-top, .archive.page-id-677 .page-top, .archive.single-ballet .page-top, .single.page-id-6 .page-top, .single.tribe-filter-live .page-top, .single.page-id-40 .page-top, .single.page-id-38 .page-top, .single.page-id-677 .page-top, .single.single-ballet .page-top {
+  -webkit-transform: translateY(-50px);
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -o-transform: translateY(-50px);
+  transform: translateY(-50px);
+  margin-bottom: -50px;
+}
+/* line 694, ../scss/breakpoints/_768up.scss */
+.page.page-id-6 .page-top h1, .page.tribe-filter-live .page-top h1, .page.page-id-40 .page-top h1, .page.page-id-38 .page-top h1, .page.page-id-677 .page-top h1, .page.single-ballet .page-top h1, .archive.page-id-6 .page-top h1, .archive.tribe-filter-live .page-top h1, .archive.page-id-40 .page-top h1, .archive.page-id-38 .page-top h1, .archive.page-id-677 .page-top h1, .archive.single-ballet .page-top h1, .single.page-id-6 .page-top h1, .single.tribe-filter-live .page-top h1, .single.page-id-40 .page-top h1, .single.page-id-38 .page-top h1, .single.page-id-677 .page-top h1, .single.single-ballet .page-top h1 {
+  -webkit-transform: translateY(-50px);
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -o-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+/* line 699, ../scss/breakpoints/_768up.scss */
+.page.single-ballet #page-content, .archive.single-ballet #page-content, .single.single-ballet #page-content {
+  padding: 150px 0;
+}
+/* line 703, ../scss/breakpoints/_768up.scss */
+.page.page-id-6 .page-top, .archive.page-id-6 .page-top, .single.page-id-6 .page-top {
+  padding-bottom: 50px;
+}
+/* line 707, ../scss/breakpoints/_768up.scss */
+.page .post-top, .archive .post-top, .single .post-top {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+/* line 710, ../scss/breakpoints/_768up.scss */
+.page .post-top h1, .archive .post-top h1, .single .post-top h1 {
+  left: -12.5%;
+}
+
+/* line 716, ../scss/breakpoints/_768up.scss */
+#calendar {
+  padding: 200px 0 300px;
+  margin-bottom: -100px;
+}
+
+/* line 721, ../scss/breakpoints/_768up.scss */
+.page .banner {
+  padding: 100px 50px;
+}
+
+/* line 726, ../scss/breakpoints/_768up.scss */
+.page-id-783 .name, .page-id-783 .question, .page-id-780 .name, .page-id-780 .question {
+  padding-left: 20px;
+  position: relative;
+}
+/* line 729, ../scss/breakpoints/_768up.scss */
+.page-id-783 .name .triangle, .page-id-783 .question .triangle, .page-id-780 .name .triangle, .page-id-780 .question .triangle {
+  display: block;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+}
+/* line 735, ../scss/breakpoints/_768up.scss */
+.page-id-783 .name .texte, .page-id-783 .question .texte, .page-id-780 .name .texte, .page-id-780 .question .texte {
+  display: none;
+  break-after: always;
+  -moz-column-break-after: always;
+  -webkit-column-break-after: always;
+}
+
+/* line 745, ../scss/breakpoints/_768up.scss */
+.page.page-id-780 .page-top {
+  padding-bottom: 0;
+}
+/* line 747, ../scss/breakpoints/_768up.scss */
+.page.page-id-780 .page-top #top-sublinks {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+}
+/* line 749, ../scss/breakpoints/_768up.scss */
+.page.page-id-780 .page-top #top-sublinks a {
+  padding-bottom: 10px;
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+/* line 766, ../scss/breakpoints/_768up.scss */
+#footer-menu nav {
+  text-align: left;
+}
+
+/* line 771, ../scss/breakpoints/_768up.scss */
+.footer-links ul li {
+  float: none;
+  position: relative;
+  /*
+  be careful with the depth of your menus.
+  it's very rare to have multi-depth menus in
+  the footer.
+  */
+}
+/* line 774, ../scss/breakpoints/_768up.scss */
+.footer-links ul li a {
+  padding: 0;
+  padding-bottom: 10px;
+  color: #fff;
+  text-transform: none;
+}
+
+/* end .footer-links */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+/* line 12, ../scss/breakpoints/_1030up.scss */
+.wrap {
+  width: 80%;
+}
+
+/* line 16, ../scss/breakpoints/_1030up.scss */
+#logo a div {
+  display: inline-block;
+}
+
+/* line 21, ../scss/breakpoints/_1030up.scss */
+#menu-main > li.menu-item:hover {
+  background-size: 80px;
+}
+
+/* line 27, ../scss/breakpoints/_1030up.scss */
+#reveal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+/* line 37, ../scss/breakpoints/_1030up.scss */
+.home #second-home #home-arrow {
+  display: block;
+}
+/* line 39, ../scss/breakpoints/_1030up.scss */
+.home #second-home #home-arrow img {
+  position: absolute;
+  top: 50px;
+  transform: rotate(-50deg);
+  left: 50px;
+  z-index: 99;
+}
+
+/* line 52, ../scss/breakpoints/_1030up.scss */
+.nav li a {
+  padding: 0.75em 1em;
+}
+
+/* line 59, ../scss/breakpoints/_1030up.scss */
+.segment .content {
+  padding: 50px 0 100px;
+}
+/* line 61, ../scss/breakpoints/_1030up.scss */
+.segment .content > .half {
+  padding: 0 50px 100px;
+}
+
+/* line 68, ../scss/breakpoints/_1030up.scss */
+.page .banner {
+  padding: 100px 150px;
+}
+/* line 72, ../scss/breakpoints/_1030up.scss */
+.page .page-top h1 {
+  padding-left: 100px;
+  font-size: 3em;
+}
+
+/* line 78, ../scss/breakpoints/_1030up.scss */
+.page-id-34.page .banner {
+  padding: 100px 150px 200px;
+}
+
+/* line 82, ../scss/breakpoints/_1030up.scss */
+.post-top #page-picture {
+  padding-right: 0;
+}
+
+/* line 92, ../scss/breakpoints/_1030up.scss */
+.footer #footer-menu {
+  display: block;
+}
+
+/* line 96, ../scss/breakpoints/_1030up.scss */
+.index-menu {
+  padding: 10px 0;
+}
+/* line 98, ../scss/breakpoints/_1030up.scss */
+.index-menu a {
+  padding-right: 5px;
+}
+
+/* line 102, ../scss/breakpoints/_1030up.scss */
+.index ul {
+  -webkit-columns: 3 0em;
+  -moz-columns: 3 0em;
+  columns: 3 0em;
+}
+
+/*
+you can call the larger styles if you want, but there's really no need
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/
+
+/*# sourceMappingURL=ie.css.map */

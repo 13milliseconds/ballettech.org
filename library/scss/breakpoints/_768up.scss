@@ -1,0 +1,790 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+}
+
+
+
+a{
+    @include transition(color .2s);
+}
+
+h1{
+    font-size: 3.5em;
+}
+h2{
+    font-size: 2.75em;
+}
+
+main#main{
+    margin-bottom: -50px;
+    padding-top: 85px;
+}
+
+.home main#main{
+    margin-bottom: 0px;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	width: 80%;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+
+
+#logo {
+        @include transition(.3s);
+        margin: .5em 0;
+    &.h1{
+        font-size: 2em;
+    }
+        img, div{
+            vertical-align: middle;
+        }
+        img{
+            display: inline-block;
+            width: 60px;
+            margin: 0 10px;
+        }
+        div{
+            display: none;
+            @include transform(rotate(-5deg));
+        }
+        .logo-sub{
+            display: block;
+            font-size: .5em;
+            line-height: .5; 
+        }
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+nav{
+    text-align: right;
+}
+
+
+#menu-main{
+    &>li>a{
+    @include transition(.3s);
+    }
+    &> li.menu-item{
+            &:hover{
+                background: {
+                    size: 70px;
+                    repeat: no-repeat;
+                    position: bottom right;
+                }
+            }
+        &#menu-item-28:hover{      // SCHOOL
+                background-image: url('https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200.png');
+            }
+        &#menu-item-53:hover{      // AUDITIONS
+                background-image: url('https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200-bluegreen.png');
+            }
+        &#menu-item-52:hover{      // COMMUNITY
+                background-image: url('https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200-yellow.png');
+            }
+        &#menu-item-51:hover{      // ABOUT US
+                background-image: url('https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200-pink.png');
+            }
+        &#menu-item-682:hover{      // EVENTS
+                background-image: url('https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200-orange.png');
+            }
+        &#menu-item-49:hover{      // CONTACT
+                background-image: url('https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200.png');
+            }
+        &#menu-item-48:hover{       // GIVING
+                background-image: url('https://ballettech.org/wp-content/themes/Ballet%20Tech/library/images/swoosh-200-green.png');
+            }
+        }
+}
+.nav {
+	border: 0;
+    display: inline-block;
+    top: auto;
+    right: auto;
+    padding: 0 0 0 0;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    
+    
+	ul {
+		margin-top:0;
+	}
+	li {
+		float: left;
+		position: relative;
+        
+        &#menu-item-28, &#menu-item-53, &#menu-item-52, &#menu-item-51, &#menu-item-682, &#menu-item-49, &#menu-item-48{
+            a{
+                color: $white;
+            }
+            & > a{
+                color: $black;
+            }
+            ul.sub-menu li{
+                &:hover a, &:focus a {
+                        color: $ballet-yellow;
+                    }
+            } 
+        }
+        &#menu-item-53 a{ // Auditions
+            line-height: auto;
+            padding-top: 0.75em;
+        }
+        
+        &#menu-item-348 a{
+            padding: 0.75em 1em;
+            padding-left: 0;
+        }
+        &#menu-item-347 a{
+            padding: 0.75em 1em;
+            padding-right: 1em;
+            padding-left: 0;
+        }
+        
+        &#menu-item-53 a{
+            line-height: initial;
+        }
+        
+         
+
+		a {
+			border-bottom: 0;
+            text-transform: uppercase;
+            text-align: left;
+            padding: 0.75em 1em;
+            font-size: 1em;
+            line-height: initial;
+			/*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/
+			&:hover, &:focus {
+				color: $ballet-green;
+			}
+		}
+
+		&:first-child {}
+		&:last-child {}
+
+		/*
+		plan your menus and drop-downs wisely.
+		*/
+		ul.sub-menu,
+		ul.children {
+            display: block;
+            top: auto;
+            background: $blue-menu;
+            border-top: 10px white solid;
+			margin-top: 0px;
+            padding: 3px;
+			position: absolute;
+			visibility: hidden;
+			z-index: 8999;
+            width: 100%;
+            position: fixed;
+            left: 0;
+
+			li {
+                float: none;
+                display: inline-block;
+                
+
+				a {
+                    padding-bottom: 5px;
+					padding-left: 10px;
+					border-right: 0;
+					display: block;
+					width: auto;
+                    color: $white;
+                    font-size: 1em;
+
+					
+
+					&:link {}
+				}
+
+				&:first-child {}
+
+				&:last-child {
+
+					a {
+						border-bottom: 0;
+					}
+				}
+
+				/*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/
+				ul {
+					top:0;
+					left:100%;
+				}
+			}
+
+			/* highlight sub-menu current page */
+			li.current-menu-item,
+			li.current_page_item,
+			li.current_page_ancestor {
+				a {}
+			}
+		}
+
+		/* showing sub-menus */
+		&:hover > ul {
+			top: auto;
+			visibility:visible;
+		}
+        
+	} /* end .menu ul li */
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current_page_ancestor {
+		a {}
+	}  /* end current highlighters */
+
+} /* end .nav */
+
+.header {
+    nav{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    #logo.h1{
+        font-size: 1.5em;
+        margin: 0 0;
+    }
+    li a{
+        padding: .75em;
+    }
+    #mobile-bars{
+        display: none;
+    }
+}
+
+main#main.error{
+    padding: 300px 0;
+    img{
+        width: 50%;
+    }
+}
+
+
+#home-segments{
+    z-index: 1;
+    padding-top: 0;
+    @include transform(translate(0px, 0px));
+    margin-bottom: 0px;
+    position: absolute;
+    top: 0;
+    #eventscontent{
+        padding-top: 20px;
+    }
+}
+
+body.home{
+    background-color: transparent;
+}
+.home {
+    #firstSlide{
+        .clickButton{
+            display: block;
+            border: 5px solid $ballet-pink;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            padding: 7px 24px;
+            color: $ballet-pink;
+            font-size: 40px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%, -100px));
+            @include transition(.5s);
+            &:hover{
+                @include transform(translate(-50%, -100px) scale(1.1));
+            }
+            &.hidden{
+                opacity: 0;
+            }
+        }
+    }
+    #home-intro{
+        width: 50%;
+        position: absolute;
+        bottom:0;
+        @include transform(translateY(-4em));
+        #wrap-intro{
+            position: relative;
+        }
+    }
+    #home-logo{
+        position: relative;
+        z-index: 1;
+        a{
+            cursor: pointer;
+            width: 50%;
+            bottom: 5%;
+            top:auto;
+            z-index:99;
+            @include transition( right .5s, opacity .2s);
+            #full-logo{
+            }
+        }
+    }
+    #second-home{
+        margin-bottom: -500px;
+        .background-color{
+                    display: block;
+                    position: absolute;
+                    z-index: 1;
+                    width: 100%;
+                    height: 300px;
+                    left: 0px;
+                    top: -20px;
+                }
+        .content{
+            z-index: 99;
+            top: 0;
+            position: absolute;
+            overflow: hidden;
+            .half{
+                padding: 30px;
+                position: relative;
+                background-color: transparent;
+                .text{
+                    z-index: 5;
+                    position: relative;
+                    h2{
+                        margin-top: 0;
+                    }
+                }
+                &#home-events{
+                    padding-left: 50px;
+                }
+            }
+        }
+    }
+    #home-intro{
+        background-color: transparent;
+            padding: 100px 20px 50px;
+        #wrap-intro{
+            z-index: 5;
+            padding: 0px 20px;
+            color: $white;
+            font-size: 1.8em;
+            font-weight: bold;
+            left: 0;
+        }
+            #intro-background{
+                display: block;
+                position: absolute;
+                width: 110%;
+                height: 150%;
+                top: 0;
+                left: -5%;
+                @include transform(rotate(-2deg) translate(0, 50px));
+            }
+    }
+    #home-footer{
+        display: block;
+        .fp-tableCell{
+            width: 10%;
+        }
+        footer{
+            padding: 50px 200px 50px;
+        }  
+    } 
+    .slotholder{
+        transform: translateY(0)!important;
+    }
+}
+
+#home-banner{
+    video.fullscreen-bg__video { 
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: auto;
+        z-index: -1;
+        display: block;
+        @include transform(translateX(-50%) translateY(-50%));
+        &.heightfirst{
+           width: auto;
+            height: 100%; 
+        }
+    }
+    #home-top-slider{
+        display: none;
+    }
+}
+
+.home #mute-btn{
+    display: block;
+    color: $ballet-pink;
+    top: 120px;
+    right: 20px;
+    position: absolute;
+    font-size: 2em;
+    cursor: pointer;
+    @include transition(opacity .3s);
+    &:hover{
+        opacity: .8;
+    }
+}
+
+#page-banner{
+    .featured_caption{
+        display: block;
+    }
+}
+
+section:nth-child(3){
+        padding-top: 50px;
+    }
+section:last-child{
+    //margin-bottom: 0;
+    .content{
+        //padding-bottom: 50px;
+    }
+} 
+
+.banner{
+    padding-top: 100px;
+    @include transform(translate(0px,-50px));
+    margin-bottom: -50px;
+    &.quotes{
+        .quote{
+            height: 8em;   
+            p{
+                height: 5em;
+            }
+        }
+        @include transform(translate(0px,0px));
+        margin-bottom: -60px;
+        &:last-of-type{
+            margin-bottom: 0px;
+        }
+    }
+}
+.segment{
+    position: relative;
+    //overflow: hidden;
+    padding-top: 150px;
+    @include transform(translate(0px,-50px));
+    margin-bottom: -100px;
+        .background{
+            display: block;
+            position: absolute;
+            z-index: -1;
+            overflow: hidden;
+            @include transform(scale(1.2));
+        .background-image{
+            min-height: 500px;
+            height: auto;
+                background:{
+                    size: cover;
+                    position: center;
+                    repeat: no-repeat;
+                }
+            }
+            .background-color{
+                z-index: 2;
+                height: 200%;
+                display: block;
+            }
+
+        }
+        .content{
+            padding: 0 0 150px;
+            &>.half{
+                padding: 0 40px;
+                background-color: transparent!important;
+            }
+            .d-4of7{
+                display: block;
+            }
+        }
+}
+
+.col-1{
+            @include column-count(1);
+        }
+.col-2{
+            @include column-count(2);
+        }
+.col-3{
+            @include column-count(3);
+        }
+.break{
+     break-after: always;
+    -moz-column-break-after: always;
+    -webkit-column-break-after: always;
+}
+.page .subpage{
+    ul{
+        @include column-count(2);
+        @include column-gap(50px);
+        &.col-1{
+            @include column-count(1);
+        }
+        &.col-2{
+            @include column-count(2);
+        }
+        &.col-3{
+            @include column-count(3);
+        }
+    }
+
+    .page-top{
+        padding: 100px 0;
+        
+        #top-sublinks{
+            @include column-count(3);
+        }
+    }
+    .content{
+        //padding: 0;
+    }
+    .tab-title{
+        font-size: 3em;
+    }
+    section:nth-of-type(3){
+        padding-top: 100px;
+    }
+    section.default{
+        padding-top: 0;
+    }
+    .banner{
+        margin-bottom: -150px;
+    }
+    .banner-image{
+        margin-bottom: 15px;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.back{
+    right: 50px;
+    display: block;
+}
+
+.ballet-info{
+    padding: 0 50px 20px 0px;
+}
+.ballet-title{
+    padding-left: 4em;
+}
+.ballet-date{
+    padding-top: 20px;
+    height: 0;
+    &:first-child{
+        padding-top: 0;
+    }
+}
+.ballet-kidsdance{
+    .arrow{
+        display: inline-block;
+        @include transform(rotate(5deg) translateX(-20px));
+        margin-top: -200px;
+    }
+    .kids-logo{
+        width: 100%;
+    }
+}
+
+.shaded{
+    box-shadow: 0 10px 60px rgba(0,0,0,.5);
+}
+
+.page, .archive, .single{ 
+    #page-banner{
+        height: auto;
+    }
+    
+    .content {
+        padding: 50px 0 150px;
+    }
+
+    .page-top{
+        h1{
+            left: -12.5%;
+            @include transform(translateY(-150px));
+            padding: 20px 50px 20px 50px;
+            font-size: 2.5em;
+        }
+
+        #description{
+            padding-top: 150px;
+            padding-bottom: 100px;
+        }
+
+        #glance-background{
+            @include transform(rotate(4deg));
+            top: -50%;
+            left: 0px;
+        }
+        #glance-content{
+            position: relative;
+            padding: 50px 50px 50px 150px;
+        }
+        #glance{
+            margin: 0;
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+        #page-content{
+            padding: 200px 0;
+        }
+    }
+    .simple .page-top{
+        padding-top: 50px;
+        .d-all{
+            height: auto;
+        }
+        h1{
+            @include transform(translateY(0));
+            margin-bottom: 50px;
+        }
+        #page-content{
+            padding: 0 0 100px;
+        }
+    }
+    &.page-id-6, &.tribe-filter-live, &.page-id-40, &.page-id-38, &.page-id-677, &.single-ballet{
+        .page-top{
+            @include transform(translateY(-50px));
+                margin-bottom: -50px;
+            h1{
+                @include transform(translateY(-50px));
+            }
+        }
+    }
+    &.single-ballet #page-content {
+        padding: 150px 0;
+    }
+    &.page-id-6{
+        .page-top{
+                padding-bottom: 50px;
+        }
+    }
+    .post-top{
+        padding-top: 80px;
+        padding-bottom: 100px;
+        h1{
+            left: -12.5%;
+        }
+    }
+}
+
+#calendar{
+    padding: 200px 0 300px;
+    margin-bottom: -100px;
+}
+
+.page .banner{
+    padding: 100px 50px;
+}
+
+.page-id-783, .page-id-780{                               // FACULTY AND STAFF, FAQ
+    .name, .question{
+        padding-left: 20px;
+        position: relative;
+        .triangle{
+            display: block;
+            position: absolute;
+            left: 0;
+            cursor: pointer;
+        }
+        .texte{
+            display: none;
+            break-after: always;
+            -moz-column-break-after: always;
+            -webkit-column-break-after: always;
+        }
+    }
+}
+
+.page.page-id-780{                       // FREQUENTLY ASKED QUESTIONS FAQ
+    .page-top{
+        padding-bottom: 0;
+        #top-sublinks{
+            @include column-count(1);
+            a{
+                padding-bottom: 10px;
+            }
+        }  
+    } 
+}
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+#footer-menu nav{
+    text-align: left;
+}
+.footer-links {
+	ul {
+		li {
+            float: none;
+            position: relative;
+			a {
+                padding: 0;
+                padding-bottom: 10px;
+                color: $white;
+                text-transform: none;
+				&:hover {}
+			}
+			/*
+			be careful with the depth of your menus.
+			it's very rare to have multi-depth menus in
+			the footer.
+			*/
+			ul {}
+		}
+	}
+} /* end .footer-links */
+

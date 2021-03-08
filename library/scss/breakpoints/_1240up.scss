@@ -1,0 +1,62 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on larger screens.
+
+******************************************************************/
+
+.segment{
+
+        .content{
+                //padding: 0px 0 250px 0;
+            &>.half{
+                padding: 0 50px 100px;
+            }
+        }
+}
+#menu-main{
+    &> li.menu-item{
+        &:hover{
+                background-size: 100px;
+        }
+    }
+}
+
+.page .banner{
+    padding: 100px 20%;
+}
+
+
+
+.nav{
+    
+    li{
+        
+        a{
+            padding: 0.75em 2em;
+        }
+    }
+}
+.header.scrolled{
+    #logo img{
+            width: 40px;
+    }
+    li a{
+        padding: 0em 2em;
+    }
+} 
+
+.footer{
+    
+}
+
+.angled{
+    .angle-bg{
+        height: 200px;
+        top: -100px;
+    }
+}
