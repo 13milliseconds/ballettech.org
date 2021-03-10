@@ -17,9 +17,7 @@ come into play. Have fun!
 GENERAL STYLES
 *********************/
 
-body {
-}
-
+$angle: 1.2deg;
 
 
 a{
@@ -508,20 +506,31 @@ section:last-child{
     padding-top: 150px;
     @include transform(translate(0px,-50px));
     margin-bottom: -100px;
-        .background{
-            display: block;
-            position: absolute;
-            z-index: -1;
-            overflow: hidden;
-            @include transform(scale(1.2));
+
+    .segment-wrap{
+        position: relative;
+    }
+
+    .background{
+        display: flex;
+        position: absolute;
+        z-index: -1;
+        overflow: hidden;
+        @include transform(scale(1.2));
+            
         .background-image{
             min-height: 500px;
             height: auto;
-                background:{
-                    size: cover;
-                    position: center;
-                    repeat: no-repeat;
-                }
+            position: relative;
+                
+            & > img{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                height: 100%;
+                object-fit: cover;
+            }
+
             }
             .background-color{
                 z-index: 2;
@@ -556,6 +565,24 @@ section:last-child{
     -moz-column-break-after: always;
     -webkit-column-break-after: always;
 }
+
+.page{
+    section.odd{
+        .segment-wrap{
+            .background-image > img{
+                @include transform(translate(-50%, -52%) rotate(-$angle)); 
+            }
+        }
+    }
+    section.even{
+        .segment-wrap{
+            .background-image > img{
+                @include transform(translate(-50%, -52%) rotate($angle));
+            }
+        }
+    }
+}
+
 .page .subpage{
     ul{
         @include column-count(2);
@@ -719,7 +746,7 @@ section:last-child{
 }
 
 .page .banner{
-    padding: 100px 50px;
+    padding: 100px 50px 200px;
 }
 
 .page-id-783, .page-id-780{                               // FACULTY AND STAFF, FAQ

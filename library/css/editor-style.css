@@ -229,13 +229,6 @@ body#tinymce.wp-editor {
   /*********************
   FONT FACE (IN YOUR FACE)
   *********************/
-  /*  To embed your own fonts, use this syntax
-    and place your fonts inside the
-    library/fonts folder. For more information
-    on embedding fonts, go to:
-    http://www.fontsquirrel.com/
-    Be sure to remove the comment brackets.
-  */
   /*  @font-face {
         font-family: 'Font Name';
         src: url('library/fonts/font-name.eot');
@@ -662,29 +655,19 @@ body#tinymce.wp-editor span.amp {
   /* line 17, ../scss/editor-style.scss */
   body#tinymce.wp-editor {
     font-family: 'TradeGothic';
-    font-weight: bold;
-    font-style: normal;
     src: url("../myfonts/webfonts/38B401_0_0.eot");
     src: url("../myfonts/webfonts/38B401_0_0.eot?#iefix") format("embedded-opentype"), url("../myfonts/webfonts/38B401_0_0.woff2") format("woff2"), url("../myfonts/webfonts/38B401_0_0.woff") format("woff"), url("../myfonts/webfonts/38B401_0_0.ttf") format("truetype");
-  }
-}
-@font-face {
-  /* line 17, ../scss/editor-style.scss */
-  body#tinymce.wp-editor {
-    font-family: 'TradeGothic';
-    font-style: italic, oblique;
-    src: url("../myfonts/webfonts/38B401_1_0.eot");
-    src: url("../myfonts/webfonts/38B401_1_0.eot?#iefix") format("embedded-opentype"), url("../myfonts/webfonts/38B401_1_0.woff2") format("woff2"), url("../myfonts/webfonts/38B401_1_0.woff") format("woff"), url("../myfonts/webfonts/38B401_1_0.ttf") format("truetype");
-  }
-}
-@font-face {
-  /* line 17, ../scss/editor-style.scss */
-  body#tinymce.wp-editor {
-    font-family: 'TradeGothic';
-    font-style: italic;
+    font-style: normal;
     font-weight: bold;
-    src: url("../myfonts/webfonts/38B401_2_0.eot");
-    src: url("../myfonts/webfonts/38B401_2_0.eot?#iefix") format("embedded-opentype"), url("../myfonts/webfonts/38B401_2_0.woff2") format("woff2"), url("../myfonts/webfonts/38B401_2_0.woff") format("woff"), url("../myfonts/webfonts/38B401_2_0.ttf") format("truetype");
+  }
+}
+@font-face {
+  /* line 17, ../scss/editor-style.scss */
+  body#tinymce.wp-editor {
+    font-family: 'TradeGothic';
+    src: url("../myfonts/webfonts/TradeGothicLTProBold.woff2") format("woff2"), url("../myfonts/webfonts/TradeGothicLTProBold.woff") format("woff");
+    font-style: italic, oblique;
+    font-weight: normal;
   }
 }
 @font-face {
@@ -703,7 +686,7 @@ body#tinymce.wp-editor span.amp {
     src: url("../myfonts/webfonts/38B401_4_0.eot?#iefix") format("embedded-opentype"), url("../myfonts/webfonts/38B401_4_0.woff2") format("woff2"), url("../myfonts/webfonts/38B401_4_0.woff") format("woff"), url("../myfonts/webfonts/38B401_4_0.ttf") format("truetype");
   }
 }
-/* line 96, ../scss/partials/_typography.scss */
+/* line 90, ../scss/partials/_typography.scss */
 body#tinymce.wp-editor p {
   -ms-word-wrap: break-word;
   word-break: break-word;

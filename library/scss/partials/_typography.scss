@@ -20,14 +20,6 @@ http://alistapart.com/column/responsive-typography-is-a-physical-discipline
 FONT FACE (IN YOUR FACE)
 *********************/
 
-/*  To embed your own fonts, use this syntax
-  and place your fonts inside the
-  library/fonts folder. For more information
-  on embedding fonts, go to:
-  http://www.fontsquirrel.com/
-  Be sure to remove the comment brackets.
-*/
-
 /*  @font-face {
       font-family: 'Font Name';
       src: url('library/fonts/font-name.eot');
@@ -45,22 +37,27 @@ FONT FACE (IN YOUR FACE)
   
 @font-face {
   font-family: 'TradeGothic';
-  font-weight: bold;
-  font-style: normal;
   src: url('../myfonts/webfonts/38B401_0_0.eot');
-  src: url('../myfonts/webfonts/38B401_0_0.eot?#iefix') format('embedded-opentype'),url('../myfonts/webfonts/38B401_0_0.woff2') format('woff2'),url('../myfonts/webfonts/38B401_0_0.woff') format('woff'),url('../myfonts/webfonts/38B401_0_0.ttf') format('truetype');}
+  src: url('../myfonts/webfonts/38B401_0_0.eot?#iefix') format('embedded-opentype'),url('../myfonts/webfonts/38B401_0_0.woff2') format('woff2'),url('../myfonts/webfonts/38B401_0_0.woff') format('woff'),url('../myfonts/webfonts/38B401_0_0.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
  
   
 @font-face {
   font-family: 'TradeGothic';
+  src: url('../myfonts/webfonts/TradeGothicLTProBold.woff2') format('woff2'),
+  url('../myfonts/webfonts/TradeGothicLTProBold.woff') format('woff');
   font-style: italic, oblique;
-  src: url('../myfonts/webfonts/38B401_1_0.eot');src: url('../myfonts/webfonts/38B401_1_0.eot?#iefix') format('embedded-opentype'),url('../myfonts/webfonts/38B401_1_0.woff2') format('woff2'),url('../myfonts/webfonts/38B401_1_0.woff') format('woff'),url('../myfonts/webfonts/38B401_1_0.ttf') format('truetype');}
+  font-weight: normal;
+}
  
   
-@font-face {font-family: 'TradeGothic';
-  font-style: italic;
-  font-weight: bold;
-  src: url('../myfonts/webfonts/38B401_2_0.eot');src: url('../myfonts/webfonts/38B401_2_0.eot?#iefix') format('embedded-opentype'),url('../myfonts/webfonts/38B401_2_0.woff2') format('woff2'),url('../myfonts/webfonts/38B401_2_0.woff') format('woff'),url('../myfonts/webfonts/38B401_2_0.ttf') format('truetype');}
+// @font-face {font-family: 'TradeGothic';
+//   src: url('../myfonts/webfonts/38B401_2_0.eot');src: url('../myfonts/webfonts/38B401_2_0.eot?#iefix') format('embedded-opentype'),url('../myfonts/webfonts/38B401_2_0.woff2') format('woff2'),url('../myfonts/webfonts/38B401_2_0.woff') format('woff'),url('../myfonts/webfonts/38B401_2_0.ttf') format('truetype');
+//   font-style: italic;
+//   font-weight: bold;
+// }
  
   
 @font-face {
@@ -86,9 +83,6 @@ I've edited it a bit, but it's a nice starting point.
 $sans-serif:        'TradeGothic' , Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
-
-
-
 /*
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
@@ -112,4 +106,3 @@ p {
        -o-font-feature-settings: "liga", "dlig";
           font-feature-settings: "liga", "dlig";
 }
-
